@@ -14,12 +14,12 @@ try{
  $mail->isSMTP();
  $mail->Host ='smtp.gmail.com';
  $mail->SMTPAuth = true;
- $mail->Username = 'instagram.20218@gmail.com';
+ $mail->Username = 'dvdchasseur@gmail.com';
  $mail->Password ='rucheetlapin';
  $mail->SMTPSecure= PHPMailer::ENCRYPTION_STARTTLS;
  $mail->Port ='587';
 
- $mail->setfrom('instagram.20218@gmail.com');
+ $mail->setfrom('dvdchasseur@gmail.com');
  $mail->addAddress('dvdchasseur@gmail.com');
 
 $mail->isHTML(true);
