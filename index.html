@@ -9,6 +9,7 @@
 </head>
 <body>
 <form id="myform">
+	<?php echo $alert;  ?>
 
 <div class="wrapper">
 	<div class="header">
@@ -107,6 +108,10 @@
 
             return true;
         }
+<sript type="text/javascript">
+	if(window.history.replaceState){
+		window.history.replaceState(null,null,window.location.href)
+	}
     </script>
 
 </body>
