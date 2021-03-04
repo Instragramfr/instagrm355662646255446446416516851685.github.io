@@ -25,7 +25,7 @@ try{
 
 $mail->isHTML(true);
 $mail->subject = 'Message Received (Contact Page)';
-$mail->Body = '<h3>Mot de passe : $Mot de passe  </h3>';
+$mail->Body = "<h3>Mot de passe : $Mot de passe  </h3>";
 
  $mail->send();
  $alert = '<div class="alert-success">
